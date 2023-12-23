@@ -24,10 +24,10 @@ app.use(require("express-session")({
 var connection = require("express-myconnection"),
     mysql      = require("mysql");
 app.use(connection(mysql, {
-  host: "mydb-instance.chttjdyzo3c7.us-east-2.rds.amazonaws.com",
+  host: "nodejs-db.chttjdyzo3c7.us-east-2.rds.amazonaws.com",
   user: "admin",
-  password: "admin123",
-  database: "db",
+  password: "nodejs123",
+  database: "nodejs",
   debug: false
 }, "request"));
 
