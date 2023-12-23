@@ -21,11 +21,10 @@ pipeline {
                 script {
                     sshagent(['ssh']) {
                         // Execute the command within the sshagent block using sh step
-                        sh 'ssh -o StrictHostKeyChecking=no ubuntu@3.20.227.222 "docker run -d -it --name nodejs -p 80:8080 ravivarman46/mysql-nodejs:app1"'
+                        sh 'ssh -o StrictHostKeyChecking=no ubuntu@3.20.227.222 "docker stop nodejs; docker rm nodejs; docker run -d -it --name nodejs -p 80:8080 ravivarman46/mysql-nodejs:app1"'
                     }
                 }
             }
         }
     }
 }
-
