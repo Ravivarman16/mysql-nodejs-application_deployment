@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e  # Exit script if any command returns a non-zero status
 
+
 #1. Updating the operating system:
 apt-get update
 
