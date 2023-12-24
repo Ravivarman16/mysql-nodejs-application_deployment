@@ -61,35 +61,70 @@ This project involves Dockerizing a Node.js app, deploying it on an AWS EC2 inst
   cd mysql-nodejs-application_deployment
 
 - Configure AWS credentials for Terraform and Execute the following commands:
-```bash
-terraform init
-terraform fmt
-terraform validate
-terraform plan
-terraform apply -auto-approve
+  ```bash
+  terraform init
+  terraform fmt
+  terraform validate
+  terraform plan
+  terraform apply -auto-approve
 
 
 ## Step 4: Test the Application Locally
 
-- Connect to the testing instance.
+- Connect to the testing instance:
 
-- Connect to the MySQL RDS database on the testing instance using the following command:
+    ```bash
+    mysql -u admin -p nodejs -h <database endpoint>
+    ```
 
-  ```bash
-  mysql -u admin -p nodejs -h <database endpoint>
+- **Create the table** by executing the script `t_user.sql`:
 
-- Create the table by using the script provided in the GitHub repository with the name t_user.sql:
+    ```bash
+    use nodejs;
+    ```
 
-```bash
-use nodejs;
+    Copy and paste the code from `t_user.sql`.
 
-- copy paste the code given in t_user.sql
-- Modify the application code for database connection in app.js & routes/index.js include the database details:
-- Install dependencies and run the Node.js app locally by using the following command
-```bash
-npm install 
-node app.js
+- **Modify the application code** in `app.js` & `routes/index.js` for the database connection, including the database details.
 
-- the application will run on the port number 8080. Paste the public ip address of testing instance on the browser.
-```bash
-Public ip address:8080
+- **Install dependencies and run the Node.js app** locally:
+
+    ```bash
+    npm install 
+    node app.js
+    ```
+
+- The application will run on port number 8080. Open your browser and navigate to:
+
+    ```bash
+    Public IP address:8080
+    ```
+
+Replace `<database endpoint>` with the actual MySQL RDS database endpoint.
+
+Note: Ensure firewall rules and security groups allow access from the testing instance to the MySQL RDS database.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
