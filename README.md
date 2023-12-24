@@ -28,3 +28,33 @@ This project involves Dockerizing a Node.js app, deploying it on an AWS EC2 inst
 
 **GitHub Repository:** [mysql-nodejs-application_deployment](https://github.com/Ravivarman16/mysql-nodejs-application_deployment.git)
 
+---
+
+# STEPS TO FOLLOW:
+
+## Step 1 – Create an IAM User:
+- Create IAM user "Terraform" with the necessary permissions (EC2, RDS, VPC).
+- Generate access and secret keys for CLI access.
+
+## Step 2: Create EC2 Instance for Terraform
+- Launch an EC2 instance (t2.micro) with Ubuntu.
+- Configure user data script to install Terraform and AWS CLI.
+
+## Step 3: Provision Infrastructure with Terraform
+
+- Clone the given repository using the following commands:
+  
+  ```bash
+  git clone https://github.com/Ravivarman16/mysql-nodejs-application_deployment.git 
+  cd mysql-nodejs-application_deployment
+
+- Configure AWS credentials for Terraform
+Execute the following commands:
+```bash
+terraform init
+terraform fmt
+terraform validate
+terraform plan
+terraform apply -auto-approve
+
+
