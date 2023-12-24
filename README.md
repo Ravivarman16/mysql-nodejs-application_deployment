@@ -2,12 +2,15 @@
 
 # Dockerized Node.js App Deployment on AWS with CI/CD
 
-## Objective
+## OBJECTIVE:
 Dockerize a simple Node.js app, deploy it on an AWS EC2 instance, interact with a MySQL database on AWS RDS, and set up a CI/CD pipeline using either AWS CodePipeline or Jenkins. Infrastructure provisioning on AWS is done using Terraform.
 
-## Solution Overview
+## SOLUTION OVERVIEW:
 - **GitHub Repository**: [mysql-nodejs-application_deployment](https://github.com/Ravivarman16/mysql-nodejs-application_deployment.git)
   
+## ARCHITECTURE DIAGRAM:
+
+![OVERVIEW](https://github.com/Ravivarman16/mysql-nodejs-application_deployment/assets/129171351/8da842f3-c98d-4e62-b1ab-86767b4bf862)
 ### Steps
 
 1. **IAM User for Terraform:**
