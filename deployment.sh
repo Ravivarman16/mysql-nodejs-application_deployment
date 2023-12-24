@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 #1. Updating the OS:
 apt-get update
 
