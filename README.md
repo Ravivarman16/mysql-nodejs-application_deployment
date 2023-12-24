@@ -27,6 +27,7 @@ Dockerize a simple Node.js app, deploy it on an AWS EC2 instance, interact with 
 1. **IAM User for Terraform:**
    - Create an IAM user named "Terraform" with necessary AWS policies for EC2, RDS, and VPC.
 
+
 2. **Provision EC2 Instance for Terraform:**
    - Launch an EC2 instance, install Terraform, and AWS CLI.
 
