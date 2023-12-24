@@ -84,25 +84,25 @@ Dockerize a simple Node.js app, deploy it on an AWS EC2 instance, interact with 
  - **User:** admin
 
 
-4. **Test the Application Locally:**
+**4. Test the Application Locally:**
    - Connect to the testing instance, set up the MySQL database, and test the Node.js application.
 
-5. **Dockerize the Application:**
+**5. Dockerize the Application:**
    - Write a Dockerfile, build a Docker image, and run a Docker container for the Node.js app.
 
-6. **Jenkins Setup:**
+**6. Jenkins Setup:**
    - Set up Jenkins on the testing instance, configure DockerHub, GitHub, and SSH credentials.
 
-7. **CI/CD Pipeline:**
+**7. CI/CD Pipeline:**
    - Create a Jenkinsfile for CI/CD pipeline, trigger builds on GitHub webhook, and deploy the app using SSH.
 
-8. **Monitoring with Prometheus & Grafana:**
+**8. Monitoring with Prometheus & Grafana:**
    - Configure Prometheus to collect Docker metrics, set up Grafana, and create dashboards for monitoring.
 
-9. **Optional: CloudWatch Setup:**
+**9. Optional: CloudWatch Setup:**
    - Set up CloudWatch dashboards and alarms for additional monitoring and alerting.
 
-10. **Documentation:**
+**10. Documentation:**
     - Provide a detailed README in the GitHub repo with setup instructions, workflow diagram, and any challenges faced during implementation.
 
 ## **Conclusion**
