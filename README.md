@@ -70,3 +70,27 @@ terraform plan
 terraform apply -auto-approve
 
 
+## Step 4: Test the Application Locally
+
+- Connect to the testing instance.
+
+- Connect to the MySQL RDS database on the testing instance using the following command:
+
+  ```bash
+  mysql -u admin -p nodejs -h <database endpoint>
+
+- Create the table by using the script provided in the GitHub repository with the name t_user.sql:
+
+```bash
+use nodejs;
+
+- copy paste the code given in t_user.sql
+- Modify the application code for database connection in app.js & routes/index.js include the database details:
+- Install dependencies and run the Node.js app locally by using the following command
+```bash
+npm install 
+node app.js
+
+- the application will run on the port number 8080. Paste the public ip address of testing instance on the browser.
+```bash
+Public ip address:8080
