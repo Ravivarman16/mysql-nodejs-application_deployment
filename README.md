@@ -60,8 +60,7 @@ This project involves Dockerizing a Node.js app, deploying it on an AWS EC2 inst
   git clone https://github.com/Ravivarman16/mysql-nodejs-application_deployment.git 
   cd mysql-nodejs-application_deployment
 
-- Configure AWS credentials for Terraform
-Execute the following commands:
+- Configure AWS credentials for Terraform and Execute the following commands:
 ```bash
 terraform init
 terraform fmt
