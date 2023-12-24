@@ -105,6 +105,41 @@ Replace `<database endpoint>` with the actual MySQL RDS database endpoint.
 Note: Ensure firewall rules and security groups allow access from the testing instance to the MySQL RDS database.
 
 
+## Step 5: Dockerize the Application
+
+- **Create the Docker image for the application** using the command:
+
+    ```bash
+    docker build -t <image name> .
+    ```
+
+- **To see the Docker image**, use the command:
+
+    ```bash
+    docker images
+    ```
+
+- **Run the container** using the created image with the command:
+
+    ```bash
+    docker run -d -it --name nodejs -p 80:8080 <image name>
+    ```
+
+- **To check whether the container is running**, use the command:
+
+    ```bash
+    docker ps
+    ```
+
+- **Copy and paste the public IP address** of the testing instance in the browser:
+
+    ```bash
+    Public IP:80
+    ```
+
+Make sure to replace `<image name>` with the desired name for your Docker image.
+
+Note: Ensure that the necessary firewall rules and security groups are configured to allow traffic on port 80 to access the application.
 
 
 
