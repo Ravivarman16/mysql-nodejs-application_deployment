@@ -17,7 +17,8 @@ This project involves Dockerizing a Node.js app, deploying it on an AWS EC2 inst
 
 ### **SOLUTION: ARCHITECTURE DIAGRAM**
 
-![image](https://github.com/Ravivarman16/mysql-nodejs-application_deployment/assets/129171351/713b2d51-041c-49b2-92c4-6f1b5da8d92e)
+![image](https://github.com/Ravivarman16/mysql-nodejs-application_deployment/assets/129171351/ca2397c6-ffa0-4bd5-bddb-75727302e7ae)
+
 
 
 ### **PRE-REQUIREMENTS**
@@ -143,23 +144,124 @@ Note: Ensure that the necessary firewall rules and security groups are configure
 
 
 
+## Step 6: Set Up Jenkins
+
+- Copy and paste the public IP address of the testing instance into the browser with port number 8080:
+
+    ```bash
+    Public IP:8080
+    ```
+
+- Set up Jenkins.
+
+
+## Step 7: Set Up DockerHub, GitHub & SSH Credentials in Jenkins
+
+- Add DockerHub credentials in Jenkins.
+  
+- Add GitHub and SSH credentials for deployment.
+
+## Step 8: Set Up SSH Connection
+
+- Download SSH and SSH Agent plugins in Jenkins.
+  
+- Configure SSH credentials for connecting to the deployment instance in **"Manage Jenkins," navigate to "System Configuration."**
+
+## Step 9: Create CI/CD Pipeline in Jenkins
+
+- Configure **GitHub webhook** for **automatic triggering.**
+  
+- Create a **Jenkins pipeline** job linked to the GitHub repository.
+- Test the pipeline by triggering a build.
+- See the output by copying the **public IP address of the deployment instance** into the browser.
+  
+   - Public IP Address: **`http://<public_ip_address>:80`**
+- Check the application to ensure it is working fine.
+
+
+### Step 10: Set Up Monitoring with Prometheus & Grafana
+
+- Configure Docker daemon to export metrics by creating `daemon.json` in `/etc/docker/daemon.json` location.
+
+    ```json
+    {
+      "metrics-addr": "0.0.0.0:9323",
+      "experimental": true
+    }
+    ```
+
+- After adding the above lines, restart Docker using the following command:
+
+    ```
+    service docker restart
+    ```
+
+
+- Add **Docker metrics and Node-Exporter to Prometheus yaml file** in `/etc/prometheus/prometheus.yaml`.
+
+    ```yaml
+    - job_name: "Docker-container"
+      static_configs:
+        - targets: ["localhost:9323"]
+
+    - job_name: 'node_exporter'
+      scrape_interval: 5s
+      static_configs:
+        - targets: ['localhost:9100']
+    ```
+
+- After adding the above lines, restart the Prometheus service using the following command:
+
+    ```
+    service prometheus restart
+    ```
+
+
+- Copy the public IP address of the deployment instance and paste it in the browser with the port number 9090.
+
+    ```
+    Public IP address:9090
+    ```
+
+- In the Prometheus web interface, navigate to "Status" and check whether all targets are up and running properly.
+
+- To connect to the Grafana server, copy the public IP address of the deployment instance and paste it in the browser with the port number 3000.
+
+    ```
+    Public IP address:3000
+    ```
+
+- Connect Grafana with Prometheus by adding Prometheus as a datasource.
+
+- Create dashboards in Grafana for monitoring containers and custom metrics.
+
+- Dashboard output like this:
+
+![image](https://github.com/Ravivarman16/mysql-nodejs-application_deployment/assets/129171351/8666758a-bba6-4761-a81b-2697893ff861)
+
+
+![image](https://github.com/Ravivarman16/mysql-nodejs-application_deployment/assets/129171351/2967775d-9d33-4c45-a0eb-7b4e27ba95ef)
 
 
 
+### Step 11: Set Up Monitoring & Alerting through CloudWatch (Optional)
+
+- Create CloudWatch dashboards for EC2 metrics.
+
+- Set up CloudWatch alarms for alerting based on metric thresholds.
 
 
+![image](https://github.com/Ravivarman16/mysql-nodejs-application_deployment/assets/129171351/c0b2253d-24b9-4ca6-a354-082c5159435e)
 
 
+# APPLICATION OUTPUT
+
+![image](https://github.com/Ravivarman16/mysql-nodejs-application_deployment/assets/129171351/068431e0-470e-4299-9607-8590329fa708)
 
 
+![image](https://github.com/Ravivarman16/mysql-nodejs-application_deployment/assets/129171351/221b7222-2632-4fa7-84e1-17815d597021)
 
 
+# Task Instructions Recap:
 
-
-
-
-
-
-
-
-
+All the steps for this task have been provided in this document 
