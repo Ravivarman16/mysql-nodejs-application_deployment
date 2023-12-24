@@ -15,3 +15,4 @@ EXPOSE 8080
 
 #starting the application:
 CMD [ "node", "app.js" ]
+
