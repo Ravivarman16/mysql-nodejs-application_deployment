@@ -264,4 +264,5 @@ Note: Ensure that the necessary firewall rules and security groups are configure
 
 # Task Instructions Recap:
 
-All the steps for this task have been provided in this document 
+All the steps for this task have been provided in this document: [Mandatory task.pdf](https://github.com/Ravivarman16/mysql-nodejs-application_deployment/files/13762346/Mandatory.task.pdf)
+
