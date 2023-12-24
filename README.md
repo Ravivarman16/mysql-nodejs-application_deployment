@@ -2,37 +2,37 @@
 
 # Dockerized Node.js App Deployment on AWS with CI/CD
 
-## Objective:
+## Objective
 Dockerize a simple Node.js app, deploy it on an AWS EC2 instance, interact with a MySQL database on AWS RDS, and set up a CI/CD pipeline using either AWS CodePipeline or Jenkins. Infrastructure provisioning on AWS is done using Terraform.
 
----
-
-
-## Solution Overview:
+## Solution Overview
 - **GitHub Repository**: [mysql-nodejs-application_deployment](https://github.com/Ravivarman16/mysql-nodejs-application_deployment.git)
 
----
-
-
-## Architecture Diagram:
-
+## Architecture Diagram
 ![OVERVIEW](https://github.com/Ravivarman16/mysql-nodejs-application_deployment/assets/129171351/8da842f3-c98d-4e62-b1ab-86767b4bf862)
 
-
----
-
-
-### Steps:
+### Steps
 
 1. **IAM User for Terraform:**
    - Create an IAM user named "Terraform" with necessary AWS policies for EC2, RDS, and VPC.
 
-
 2. **Provision EC2 Instance for Terraform:**
-   - Launch an EC2 instance, install Terraform, and AWS CLI.
-
-3. **Terraform Infrastructure Provisioning:**
-   - Write Terraform scripts to create AWS resources - security groups, EC2 instances, and RDS database.
+   - **Clone the GitHub repository:**
+     ```bash
+     git clone https://github.com/Ravivarman16/mysql-nodejs-application_deployment.git
+     ```
+     **Move inside the repository:**
+     ```bash
+     cd mysql-nodejs-application_deployment
+     ```
+     **Configure AWS credentials, and run the following commands for Terraform:**
+     ```bash
+     terraform init
+     terraform fmt
+     terraform validate
+     terraform plan
+     terraform apply -auto-approve
+     ```
 
 4. **Test the Application Locally:**
    - Connect to the testing instance, set up the MySQL database, and test the Node.js application.
