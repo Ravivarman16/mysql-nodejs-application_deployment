@@ -2,10 +2,10 @@ var express    = require("express"),
     router     = express.Router(),
     mysql      = require("mysql"),
     connection = mysql.createConnection({
-      host: "nodejs-db.chttjdyzo3c7.us-east-2.rds.amazonaws.com",
+      host: "database-1.cf6i8mcqcm4y.us-east-2.rds.amazonaws.com",
       user: "admin",
       password: "nodejs123",
-      database: "nodejs",
+      database: "php",
       debug: false
     });
 // check to ensure database is connected
